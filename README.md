@@ -1,12 +1,12 @@
 # MCP Backend - Rust + Axum
 
-Backend MCP profesional y seguro desarrollado en Rust con framework Axum. Incluye módulos completos para:
+
+Backend MCP profesional y seguro desarrollado en Rust con framework Axum. Incluye módulos completos para scraping, autenticación y ciberseguridad.
 
 ## 🚀 Características
 
-- **Autenticación segura**: JWT, bcrypt, validación robusta
+- **Autenticación segura**: JWT, Argon2id, validación robusta
 - **Web Scraping**: Extracción inteligente de contenido web
-- **Machine Learning**: Análisis de sentimientos, clasificación de texto, regresión
 - **Ciberseguridad**: Validación de entrada, detección de amenazas, auditorías
 - **API REST**: Endpoints bien documentados y estructurados
 
@@ -17,7 +17,6 @@ src/
 ├── main.rs          # Punto de entrada principal
 ├── auth/            # Autenticación y autorización
 ├── scraper/         # Web scraping y análisis de contenido
-├── ml/              # Machine learning y análisis de datos
 ├── api/             # Controladores y utilidades de API
 └── security/        # Validación y auditoría de seguridad
 ```
@@ -56,8 +55,6 @@ El servidor estará disponible en `http://localhost:8080`
 ### Scraping
 - `POST /api/scrape` - Extraer contenido de URLs
 
-### Machine Learning
-- `POST /api/ml/predict` - Predicciones y análisis
 
 ### Seguridad
 - `POST /api/security/validate` - Validación de seguridad
@@ -77,7 +74,7 @@ RUST_LOG=info
 - **tokio**: Runtime asíncrono
 - **serde**: Serialización JSON
 - **jsonwebtoken**: Autenticación JWT
-- **bcrypt**: Hashing seguro de contraseñas
+- **argon2**: Hashing seguro de contraseñas (Argon2id)
 - **scraper**: Parsing HTML
 - **reqwest**: Cliente HTTP
 - **ndarray**: Operaciones matemáticas
@@ -87,19 +84,11 @@ RUST_LOG=info
 
 - Validación estricta de entrada
 - Protección contra XSS y SQL injection
-- Hashing seguro de contraseñas con bcrypt
+- Hashing seguro de contraseñas con Argon2id
 - Tokens JWT con expiración
 - Sanitización automática de datos
 - Auditorías de seguridad en tiempo real
 
-## 🧠 Capacidades de ML
-
-- Análisis de sentimientos
-- Clasificación de texto
-- Regresión lineal
-- Extracción de características
-- Puntuación de legibilidad
-- Detección de patrones
 
 ## 🌐 Scraping Inteligente
 
@@ -125,12 +114,6 @@ curl -X POST http://localhost:8080/api/scrape \
   -d '{"url":"https://ejemplo.com","selectors":["h1","p"]}'
 ```
 
-### Análisis de Sentimientos
-```bash
-curl -X POST http://localhost:8080/api/ml/predict \
-  -H "Content-Type: application/json" \
-  -d '{"model_type":"sentiment","input_data":"Este producto es fantástico!"}'
-```
 
 ### Validación de Seguridad
 ```bash
