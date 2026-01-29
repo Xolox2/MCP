@@ -1,7 +1,6 @@
 # MCP Backend - Rust + Axum
 
 
-Backend MCP profesional y seguro desarrollado en Rust con framework Axum. Incluye módulos completos para scraping, autenticación y ciberseguridad.
 
 ## 🚀 Características
 
